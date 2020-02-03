@@ -1,0 +1,27 @@
+body{
+    margin: 0 auto;
+    font-family: roboto;
+}
+a{
+    text-decoration: none;
+}
+header{
+    width: 22.5rem;
+    height:100vh;
+    position: fixed;
+    z-index: 900;
+    display: block;
+    background:#3cf;
+}
+header ul{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+header ul li {
+    display:block;
+    padding: 1rem;
+}
+main{
+    margin-left:22.5rem;
+}
