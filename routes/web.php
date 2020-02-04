@@ -15,12 +15,24 @@
 Route::get('/', 'ClienteController@index');
 
 //CLIENTE
-Route::prefix('cliente')->group(function() {
+Route::prefix('cliente')->group(function () {
     $controller = 'ClienteController';
 
     Route::get('/', "$controller@cadastro");
     Route::post('/adicionar', "$controller@adicionar");
     Route::get('/{id}/editar', "$controller@editar");
     Route::get('/listar', "$controller@listar");
+    Route::post('/atualizar/{id}', "$controller@update");
+});
+
+//Proposta
+Route::prefix('proposta')->group(function () {
+    $controller = 'PropostaController';
+
+    Route::get('/', "$controller@cadastro");
+    Route::post('/adicionar', "$controller@adicionar");
+    Route::get('/{id}/editar', "$controller@editar");
+    Route::get('/listar', "$controller@listar");
+    Route::get('/listar/{nome}/{tipo}', "$controller@filtro");
     Route::post('/atualizar/{id}', "$controller@update");
 });

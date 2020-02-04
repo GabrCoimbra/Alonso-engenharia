@@ -38,6 +38,6 @@ class Cliente extends Migration
      */
     public function down()
     {
-        Schema::drop('cliente');
+        Schema::drop('TB_Cliente');
     }
 }
