@@ -19,6 +19,7 @@ class Proposta extends Migration
             $table->increments('cd_Proposta');
             $table->unsignedInteger('cd_Cliente')->nullable(false);
             $table->string('ds_Endereco_Obra')->nullable(false);
+            $table->unsignedDecimal('vl_Total', 6, 2);
             $table->unsignedDecimal('vl_Sinal', 6, 2);
             $table->unsignedInteger('qt_Parcelas')->nullable(false);
             $table->unsignedDecimal('vl_Parcelas', 6, 2)->nullable(false);

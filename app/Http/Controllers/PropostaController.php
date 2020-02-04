@@ -24,16 +24,18 @@ class PropostaController extends Controller
     public function adicionar(Request $request)
     {
         $dados = request()->validate([
-            'ds_Razao_Social'     => 'required|max:100',
-            'nm_Fantasia'    => 'required|max:100',
-            'cd_CNPJ'             => 'required|max:100',
-            'ds_Endereco'         => 'required|max:100',
-            'ds_Email'            => 'required|max:100|email',
-            'cd_Telefone'         => 'required|max:100',
-            'nm_Responsavel' => 'required|max:100',
-            'cd_CPF'              => 'required|max:100',
-            'cd_Celular'          => 'required|max:100'
+            'cd_Cliente'          => 'required|exists:clientes,id',
+            'ds_Endereco_Obra'       => 'required|max:100',
+            'vl_Total'            => 'required|numeric',
+            'vl_Sinal'               => 'required|max:100',
+            'qt_Parcelas'         => 'required|numeric',
+            'vl_Parcelas'         => 'required|numeric',
+            'dt_Inicio_Pagamento' => 'required|date',
+            'dt_Parcelas'         => 'required|date',
+            'ds_Arquivo'             => 'required',
+            'ic_Aberto'              => 'required|boolean'
         ]);
+
         $proposta = Proposta::create($dados);
         
         return redirect('/listar');

@@ -8,17 +8,21 @@ use App\Cliente;
 
 class ClienteController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('cliente.index');
     }
-    public function listar(){
+    public function listar()
+    {
         $clientes = Cliente::all();
         return view('cliente.listar', compact('clientes'));
     }
-    public function cadastro(){
+    public function cadastro()
+    {
         return view('cliente.cadastro');
     }
-    public function adicionar(Request $request){
+    public function adicionar(Request $request)
+    {
         $dados = request()->validate([
             'ds_Razao_Social'     => 'required|max:100',
             'nm_Fantasia'    => 'required|max:100',
@@ -34,17 +38,20 @@ class ClienteController extends Controller
         
         return redirect('/listar');
     }
-    public function editar($id){
+    public function editar($id)
+    {
         $cliente = Cliente::find($id);
         return view('cliente.editar', compact('cliente'));
     }
     
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         $client = null;
         $client = Cliente::find($id);
         return $this->save($request->all(), $client);
     }
-    public function save($fields, $client = null) {
+    public function save($fields, $client = null)
+    {
         $result = $client->update($fields);
         return redirect('cliente/listar');
     }
