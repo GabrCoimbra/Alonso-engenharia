@@ -12,6 +12,10 @@ class Proposta extends Model
     
     protected $primaryKey = 'cd_Proposta';
 
+    
+    const CREATED_AT = 'dt_Registro';
+    const UPDATED_AT = 'dt_Modificacao';
+
     public function cliente()
     {
         return $this->belongsTo(Cliente::class);

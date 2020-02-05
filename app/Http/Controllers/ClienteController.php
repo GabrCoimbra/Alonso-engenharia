@@ -8,6 +8,11 @@ use App\Cliente;
 
 class ClienteController extends Controller
 {
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         return view('cliente.index');
@@ -36,7 +41,7 @@ class ClienteController extends Controller
         ]);
         $cliente = Cliente::create($dados);
         
-        return redirect('/listar');
+        return redirect('cliente/listar');
     }
     public function editar($id)
     {

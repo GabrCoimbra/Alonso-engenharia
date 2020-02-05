@@ -12,6 +12,9 @@ class Cliente extends Model
     
     protected $primaryKey = 'cd_Cliente';
 
+    const CREATED_AT = 'dt_Registro';
+    const UPDATED_AT = 'dt_Atualizacao';
+    
     public function propostas()
     {
         return $this->hasMany(Proposta::class);

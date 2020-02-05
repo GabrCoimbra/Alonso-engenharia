@@ -12,7 +12,7 @@
 */
 
 // ROTA PADRÃO
-Route::get('/', 'ClienteController@index');
+Route::get('/', 'HomeController@index')->name('home');
 
 //CLIENTE
 Route::prefix('cliente')->group(function () {
@@ -33,6 +33,12 @@ Route::prefix('proposta')->group(function () {
     Route::post('/adicionar', "$controller@adicionar");
     Route::get('/{id}/editar', "$controller@editar");
     Route::get('/listar', "$controller@listar");
-    Route::get('/listar/{nome}/{tipo}', "$controller@filtro");
+    Route::post('/filtro', "$controller@filtro");
+    Route::get('/exportar', "$controller@exportar");
     Route::post('/atualizar/{id}', "$controller@update");
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
