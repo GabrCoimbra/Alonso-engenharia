@@ -32,13 +32,12 @@ Route::prefix('proposta')->group(function () {
     Route::get('/', "$controller@cadastro");
     Route::post('/adicionar', "$controller@adicionar");
     Route::get('/{id}/editar', "$controller@editar");
+    Route::post('/atualizar/{id}', "$controller@update");
     Route::get('/listar', "$controller@listar");
     Route::post('/filtro', "$controller@filtro");
     Route::get('/exportar', "$controller@exportar");
-    Route::post('/atualizar/{id}', "$controller@update");
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
