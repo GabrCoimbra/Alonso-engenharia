@@ -8,18 +8,27 @@
                 <div class="form-group">
                     <form action="/proposta/filtro" method="post">
                         @csrf
-                        <input 
-                        type="text" name="busca"
-                        placeholder="Busca" 
-                        >
-                        <select name="tipo">
-                            <option value="nm_Responsavel"> Nome do Responsavel</option>
-                            <option value="ic_Aberto"> Status do pedido</option>
-                            <option value="dt_Registro"> Data do Registro</option>
-                        </select>
-                        <input
-                        type="submit" value="Buscar"
-                        />
+                        <div class="row">
+                            <div class="col">
+                                <input 
+                                type="text" name="busca" class="form-control" id="exampleInputEmail1"
+                                placeholder="Busca" 
+                                >
+                            </div>
+                            <div col">
+                                <select name="tipo" class="form-control" id="exampleInputEmail1">
+                                    <option value="nm_Responsavel"> Nome do Responsavel</option>
+                                    <option value="ic_Aberto"> Status do pedido</option>
+                                    <option value="dt_Registro"> Data do Registro</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <input
+                                type="submit" value="Buscar"
+                                class="btn btn-primary"
+                                />
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -64,7 +73,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <a href="/proposta/exportar"><div class="btn"> Exportar  </div></a>
+            <a href="/proposta/exportar"><div class="btn btn-secondary"> Exportar  </div></a>
         </div>
     </div>
 </div>
