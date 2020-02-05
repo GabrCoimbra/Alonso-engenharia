@@ -94,7 +94,7 @@
 
                 <div class="form-group">
                     <label for="cliente"> Status</label>
-                    <select name="cd_Cliente">
+                    <select name="ic_Aberto">
                             <option value="1">Aberto</option>
                             <option value="0">Fechado</option>
                     </select>
